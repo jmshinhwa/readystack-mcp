@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/robots-txt-ai-crawler-audit",
+  "version": "0.1.1",
+  "description": "Checks robots.txt line by line and says what each AI crawler token actually controls - training, AI-search citation, or user fetch - and which lines silently do nothing.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "robots.txt",
+    "AI crawler",
+    "GPTBot",
+    "Google-Extended",
+    "SEO"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_I8R8AzowzmASHy45ujvewcvtcl4wBBfC2Fe7r3fZwpr",
+  "bin": {
+    "robots-txt-ai-crawler-audit": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/robots-txt-ai-crawler-audit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "robots-txt-ai-crawler-audit"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/eaa-form-lint-wcag22",
+  "version": "1.0.2",
+  "description": "Names every WCAG 2.2 AA form failure on its line, with the criterion and the fix",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "accessibility",
+    "wcag",
+    "a11y",
+    "eaa",
+    "html",
+    "forms",
+    "lint",
+    "en-301-549"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_O5AMXCnn3ZETWE939bA4zjzmM0KqLt9Yp76Xm2x1Pa1",
+  "bin": {
+    "eaa-form-lint-wcag22": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/eaa-form-lint-wcag22",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "eaa-form-lint-wcag22"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

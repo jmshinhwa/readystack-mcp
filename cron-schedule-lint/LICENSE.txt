@@ -1,0 +1,1 @@
+Copyright (c) ReadyStack. Free tier: use without limit. Paid tier: one licence key per person or CI pipeline.

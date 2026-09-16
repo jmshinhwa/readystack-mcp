@@ -1,0 +1,43 @@
+{
+  "name": "@readystack/k8s-removed-api-lint",
+  "version": "1.0.1",
+  "description": "15 checks for the apiVersions kubectl no longer serves, on the manifest open in your editor",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "kubernetes",
+    "apiversion",
+    "deprecated-api",
+    "manifest",
+    "helm",
+    "kubectl",
+    "cluster-upgrade",
+    "yaml",
+    "migration"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_KTPvcCTdnbtM5Aee1mJ5vKkTnXi90z2QikiQy1sh8m7",
+  "bin": {
+    "k8s-removed-api-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/k8s-removed-api-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "k8s-removed-api-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

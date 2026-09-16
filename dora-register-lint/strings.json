@@ -1,0 +1,10 @@
+{
+ "name": "DORA Register of Information Lint",
+ "subtitle": "24 checks on the register CSV before it reaches the supervisor — LEI check digits, ISO dates and codes, references that resolve",
+ "bin": "dora-register-lint",
+ "price": 29,
+ "free": "Check the register CSV open in your editor - every row, all 24 checks, findings in the Problems panel and a written summary in the output channel, no key and no account",
+ "paid": "Sweep every register CSV in the workspace and write one dated report file (doraRegister-report.md) you can attach to the audit trail",
+ "need_key": "This option needs a licence (DORA Register of Information Lint).",
+ "exts": []
+}

@@ -1,0 +1,43 @@
+{
+  "name": "@readystack/france-einvoice-reception-lint",
+  "version": "1.0.1",
+  "description": "12 checks for the French mandatory mentions a PDP rejects, on Factur-X, UBL and CII invoices",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "factur-x",
+    "e-invoicing",
+    "france",
+    "en16931",
+    "chorus-pro",
+    "siren",
+    "ubl",
+    "cii",
+    "facturation-electronique"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_a6x1aVkUPqSGx38DFlJw68NPUQdMdCYBpENCR47YuFw",
+  "bin": {
+    "france-einvoice-reception-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/france-einvoice-reception-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "france-einvoice-reception-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

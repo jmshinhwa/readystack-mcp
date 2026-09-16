@@ -1,0 +1,10 @@
+{
+ "name": "Cloud Cost Landmine Lint for Terraform, CloudFormation and Kubernetes",
+ "subtitle": "Names every line in the file you have open that starts a recurring cloud charge, with the published us-east-1 price and the date it changes by itself.",
+ "bin": "cloud-cost-landmine-lint",
+ "price": 29,
+ "free": "Checks the file you have open against all 27 rules and names every line that starts a standing charge, with its published us-east-1 unit price and the date it changes on its own - no key, no limit, no watermark.",
+ "paid": "Scans every file in the repository at once, exports the findings as CSV, JSON or HTML for a budget review, and prints machine output that exits non-zero so a pipeline can stop a merge that adds a standing charge.",
+ "need_key": "This option needs a licence (Cloud Cost Landmine Lint for Terraform, CloudFormation and Kubernetes).",
+ "exts": []
+}

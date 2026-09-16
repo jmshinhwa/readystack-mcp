@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/cra-24-72-14-reporting-lint",
+  "version": "1.0.1",
+  "description": "Reads your SECURITY.md against the EU Cyber Resilience Act reporting clock that started on 11 September 2026 — 24 hours, 72 hours, 14 days, to ENISA and your coordinating CSIRT.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cyber resilience act",
+    "cra",
+    "article 14",
+    "vulnerability reporting",
+    "enisa",
+    "csirt",
+    "security.md",
+    "compliance"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_zmN08yKAf6Qz5WMiSQO9V9MxIRQN87VQEfurn03M3KT",
+  "bin": {
+    "cra-24-72-14-reporting-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/cra-24-72-14-reporting-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "cra-24-72-14-reporting-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

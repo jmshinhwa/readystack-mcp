@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/mcp-config-guard",
+  "version": "1.0.1",
+  "description": "Reads .mcp.json / .vscode/mcp.json / claude_desktop_config.json while you edit it and marks the lines that hand an AI agent more than you meant - unpinned servers, literal credentials, plaintext trans",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "mcp",
+    "model context protocol",
+    "ai agent",
+    "security",
+    "lint",
+    "json",
+    "supply chain",
+    "secrets"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_qkyHZkQQW6eB0rXgrKfDGviLlVixnkbP42q8B3h7YrG",
+  "bin": {
+    "mcp-config-guard": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/mcp-config-guard",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "mcp-config-guard"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

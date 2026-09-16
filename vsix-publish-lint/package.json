@@ -1,0 +1,41 @@
+{
+  "name": "@readystack/vsix-publish-lint",
+  "version": "1.0.2",
+  "description": "Find the package.json lines that stop vsce before you run the release build",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "vsce",
+    "vsix",
+    "publish",
+    "manifest",
+    "open vsx",
+    "extension development",
+    "package.json"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_0qIqdKq149OPf1mvGZKukzSvyH1nK9fHwub4l4P27pr",
+  "bin": {
+    "vsix-publish-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/vsix-publish-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "vsix-publish-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

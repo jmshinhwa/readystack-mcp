@@ -1,0 +1,10 @@
+{
+ "name": "MCP 2026 Migration Lint",
+ "subtitle": "The 2026-07-28 MCP revision removed the initialize handshake, sessions, ping and 4 more RPCs. 27 rules find them in your mcp.json and server code, with the replacement on each line.",
+ "bin": "mcp-2026-migration-lint",
+ "price": 29,
+ "free": "All 27 rules on the file you have open, or on just the lines you select, with the line number and the replacement for each - no key, no account, offline.",
+ "paid": "Scale, not a better answer: every mcp.json and server file in the whole repository in one pass, the findings exported as CSV/JSON/HTML, and CI output that fails the build.",
+ "need_key": "This option needs a licence (MCP 2026 Migration Lint).",
+ "exts": []
+}

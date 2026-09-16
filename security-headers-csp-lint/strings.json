@@ -1,0 +1,10 @@
+{
+ "name": "Security Headers Lint - CSP and Dead Headers",
+ "subtitle": "Reads security headers and CSP line by line in your config file and names the lines that silently do nothing: retired headers, keywords missing their quotes, directives the browser throws away.",
+ "bin": "security-headers-csp-lint",
+ "price": 29,
+ "free": "Check the open config against all 28 rules - every finding shown, nothing withheld; Check only the lines you highlight; See every rule and what each retired header or dropped directive actually does; Reopen the last report",
+ "paid": "Scan every config file in the workspace; Export the report as CSV, JSON or HTML; CI output that fails the build on errors; Add your own house policy rules; Re-check automatically on every save; Apply the safe fixes for you",
+ "need_key": "This option needs a licence (Security Headers Lint - CSP and Dead Headers).",
+ "exts": []
+}

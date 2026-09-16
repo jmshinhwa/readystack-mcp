@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/license-flip-audit",
+  "version": "0.1.1",
+  "description": "Finds the dependencies whose licence changed under you - Terraform 1.6+ BUSL, Redis 7.4+ SSPL, Bitnami's August 2025 move, Elastic 7.11 - and names the exact version where each flip happened.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "license",
+    "compliance",
+    "dependencies",
+    "sbom",
+    "audit"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_sFzJiUXy6pSbEx0SFN1aIg7vRguyRc32MpDnb1iCHPe",
+  "bin": {
+    "license-flip-audit": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/license-flip-audit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "license-flip-audit"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

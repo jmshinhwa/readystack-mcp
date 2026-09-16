@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/dora-register-lint",
+  "version": "1.0.1",
+  "description": "24 checks on the register CSV before it reaches the supervisor — LEI check digits, ISO dates and codes, references that resolve",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "dora",
+    "register of information",
+    "lei",
+    "csv",
+    "compliance",
+    "fintech",
+    "eu",
+    "audit"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_4WZMkiJUxjGBBEqJo7hbkQ7REYH8kJIOWwGoJ29agpN",
+  "bin": {
+    "dora-register-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/dora-register-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "dora-register-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

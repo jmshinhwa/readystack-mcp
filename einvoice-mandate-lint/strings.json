@@ -1,0 +1,10 @@
+{
+ "name": "E-Invoice Mandate Lint - EU 2026",
+ "subtitle": "Lints UBL and CII invoice XML against EN 16931 and the national e-invoicing mandates that are live in 2026",
+ "bin": "einvoice-mandate-lint",
+ "price": 29,
+ "free": "Lint the invoice XML you have open - every EN 16931 core field plus the country mandate rules its CustomizationID and seller country select, reported with line numbers.",
+ "paid": "Scan every invoice XML in the workspace in one pass and export the findings as JSON, CSV or SARIF you keep and run in CI.",
+ "need_key": "This option needs a licence (E-Invoice Mandate Lint - EU 2026).",
+ "exts": []
+}

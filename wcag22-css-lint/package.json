@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/wcag22-css-lint",
+  "version": "1.0.2",
+  "description": "Reads your stylesheet and names the success criterion each rule breaks, including the three WCAG 2.2 added that WCAG 2.1 linters never learned.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "wcag",
+    "wcag 2.2",
+    "accessibility",
+    "css",
+    "a11y",
+    "en 301 549",
+    "target size",
+    "focus visible"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_gYGJTycG04gELmMeEpKE2BMsam4llOPlJb69i33u33l",
+  "bin": {
+    "wcag22-css-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/wcag22-css-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "wcag22-css-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

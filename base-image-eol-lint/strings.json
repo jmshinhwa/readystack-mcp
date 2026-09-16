@@ -1,0 +1,10 @@
+{
+ "name": "Base Image EOL Lint - Dockerfile and CI end-of-life check",
+ "subtitle": "Marks every base image in your Dockerfiles, compose files and CI workflows whose security patches have already stopped - or stop before 13 November 2026 - and prints the tag that replaces it.",
+ "bin": "base-image-eol-lint",
+ "price": 29,
+ "free": "Checks the file you have open against all 21 rules and shows every out-of-support image with the tag that replaces it and how long it has been unpatched - no key, no limit, no watermark.",
+ "paid": "Scans every Dockerfile, compose file and workflow in the repository at once, writes a dated CSV/JSON/HTML report, and prints machine-readable output so CI fails the build before an unpatched base image ships.",
+ "need_key": "This option needs a licence (Base Image EOL Lint - Dockerfile and CI end-of-life check).",
+ "exts": []
+}

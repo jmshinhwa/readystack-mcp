@@ -1,0 +1,44 @@
+{
+  "name": "@readystack/pqc-deprecation-lint",
+  "version": "1.0.1",
+  "description": "Dates every quantum-vulnerable algorithm in your code against the NIST IR 8547 clock: deprecated after 2030-12-31, disallowed after 2035-12-31.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "post-quantum",
+    "pqc",
+    "nist",
+    "ml-kem",
+    "fips-203",
+    "rsa",
+    "ecdsa",
+    "crypto-agility",
+    "migration",
+    "security"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_Q0a5F9WB3Ub2fTRsFv8TePDwMQjmT1GtVgVGl3H6oee",
+  "bin": {
+    "pqc-deprecation-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/pqc-deprecation-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "pqc-deprecation-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

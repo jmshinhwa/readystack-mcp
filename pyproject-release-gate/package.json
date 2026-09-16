@@ -1,0 +1,44 @@
+{
+  "name": "@readystack/pyproject-release-gate",
+  "version": "1.0.2",
+  "description": "19 date-aware checks on the [project] metadata that decides whether your next release uploads",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "pyproject",
+    "toml",
+    "pep 639",
+    "packaging",
+    "pypi",
+    "requires-python",
+    "spdx",
+    "setuptools",
+    "wheel",
+    "eol"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_Dwv8rDHzgqaWnEsVKKqSDvaTApy7kMa9XNhx70ttYbL",
+  "bin": {
+    "pyproject-release-gate": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/pyproject-release-gate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "pyproject-release-gate"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

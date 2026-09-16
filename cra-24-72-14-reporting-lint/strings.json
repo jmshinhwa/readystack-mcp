@@ -1,0 +1,12 @@
+{
+ "name": "CRA 24/72/14 Reporting Lint (Article 14)",
+ "subtitle": "Reads your SECURITY.md against the EU Cyber Resilience Act reporting clock that started on 11 September 2026 — 24 hours, 72 hours, 14 days, to ENISA and your coordinating CSIRT.",
+ "bin": "cra-24-72-14-reporting-lint",
+ "price": 29,
+ "free": "Checks the Markdown file you have open against all 18 rules, offline, with the article and the replacement line for every finding — no watermark, no counter, nothing withheld.",
+ "paid": "Sweeps every Markdown file in the workspace in one pass, works out which checks are answered nowhere in the repository rather than merely missing from one file, and writes one dated CRA-24-72-14-READINESS.md to hand to an auditor.",
+ "need_key": "This option needs a licence (CRA 24/72/14 Reporting Lint (Article 14)).",
+ "exts": [
+  ".md"
+ ]
+}

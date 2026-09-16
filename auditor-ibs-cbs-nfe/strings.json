@@ -1,0 +1,10 @@
+{
+ "name": "Auditor IBS/CBS para NF-e — NT 2025.002",
+ "subtitle": "A rejeição por falta de IBS/CBS foi suspensa em 31/07/2026: sua NF-e é autorizada mesmo errada. Este auditor lê o XML no editor e aponta o que a SEFAZ deixou passar.",
+ "bin": "auditor-ibs-cbs-nfe",
+ "price": 29,
+ "free": "Audita um XML de NF-e inteiro no editor, offline, com as 11 regras da NT 2025.002 e mostra linha, problema e correção.",
+ "paid": "Audita todos os XMLs do workspace de uma vez, exporta o laudo em CSV/JSON/HTML e devolve saída JSON para o CI.",
+ "need_key": "This option needs a licence (Auditor IBS/CBS para NF-e — NT 2025.002).",
+ "exts": []
+}

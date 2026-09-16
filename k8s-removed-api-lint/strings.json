@@ -1,0 +1,10 @@
+{
+ "name": "Kubernetes Removed API Lint",
+ "subtitle": "15 checks for the apiVersions kubectl no longer serves, on the manifest open in your editor",
+ "bin": "k8s-removed-api-lint",
+ "price": 29,
+ "free": "Check the manifest open in the editor against all 15 rules and get the removal release and the replacement apiVersion for every hit - a finished answer for that file, no key",
+ "paid": "Sweep every manifest in the workspace and write one dated migration report ordered by removal version - the same 15 rules at repo scope",
+ "need_key": "This option needs a licence (Kubernetes Removed API Lint).",
+ "exts": []
+}

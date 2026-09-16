@@ -1,0 +1,10 @@
+{
+ "name": "France E-Invoice Reception Lint",
+ "subtitle": "12 checks for the French mandatory mentions a PDP rejects, on Factur-X, UBL and CII invoices",
+ "bin": "france-einvoice-reception-lint",
+ "price": 29,
+ "free": "Check the invoice XML open in the editor against all 12 rules and get every finding with line numbers — a finished answer for that file, no key",
+ "paid": "Sweep every invoice in the workspace and write one dated reception-readiness report — the same 12 rules at workspace scope",
+ "need_key": "This option needs a licence (France E-Invoice Reception Lint).",
+ "exts": []
+}

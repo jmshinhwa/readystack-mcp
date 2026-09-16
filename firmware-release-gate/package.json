@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/firmware-release-gate",
+  "version": "0.1.1",
+  "description": "Finds the build-config lines that ship an ESP-IDF or Zephyr device with secure boot off, a debug port open, unsigned images or plaintext OTA.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "esp-idf",
+    "zephyr",
+    "sdkconfig",
+    "mcuboot",
+    "firmware"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_cmmWDH5sYqYlHlEAy4aCkF8gPdT40c3FhYupJ1VFP22",
+  "bin": {
+    "firmware-release-gate": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/firmware-release-gate",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "firmware-release-gate"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

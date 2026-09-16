@@ -1,0 +1,10 @@
+{
+ "name": "Firmware Release Gate for sdkconfig and prj.conf",
+ "subtitle": "Finds the build-config lines that ship an ESP-IDF or Zephyr device with secure boot off, a debug port open, unsigned images or plaintext OTA.",
+ "bin": "firmware-release-gate",
+ "price": 29,
+ "free": "Audit the config file you have open, top to bottom; List the rules that ship inside; Re-open the last audit report",
+ "paid": "Audit every config in the workspace; Export the audit report as CSV, JSON or HTML; Machine-readable JSON for CI",
+ "need_key": "This option needs a licence (Firmware Release Gate for sdkconfig and prj.conf).",
+ "exts": []
+}

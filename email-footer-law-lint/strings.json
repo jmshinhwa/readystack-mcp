@@ -1,0 +1,10 @@
+{
+ "name": "Email Footer Law Lint",
+ "subtitle": "Fourteen checks on an HTML email footer: CAN-SPAM postal address and 10-business-day opt-out, CASL's 60-day window, and German 5 DDG, the statute that replaced 5 TMG on 2024-05-14.",
+ "bin": "email-footer-law-lint",
+ "price": 29,
+ "free": "Check the email template open in your editor against all 14 footer-law rules, every finding carrying its line, its statute and its fix",
+ "paid": "Sweep every template in the workspace and write one dated, citable audit report file you can hand to a client or to counsel",
+ "need_key": "This option needs a licence (Email Footer Law Lint).",
+ "exts": []
+}

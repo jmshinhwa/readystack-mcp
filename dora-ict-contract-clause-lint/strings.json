@@ -1,0 +1,10 @@
+{
+ "name": "DORA Art. 30 ICT Contract Clause Lint",
+ "subtitle": "Twenty-two checks over the ICT vendor contracts in your repository - every missing Article 30 clause named, with the wording to paste in.",
+ "bin": "dora-ict-contract-clause-lint",
+ "price": 29,
+ "free": "Lint one open ICT vendor contract to the end: every missing DORA Article 30 clause named, with the article reference and the wording to paste in.",
+ "paid": "One pass over every contract in the repository plus an exported per-vendor, per-clause evidence table for the register of information and the Q4 audit file.",
+ "need_key": "This option needs a licence (DORA Art. 30 ICT Contract Clause Lint).",
+ "exts": []
+}

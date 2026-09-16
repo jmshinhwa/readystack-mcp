@@ -1,0 +1,10 @@
+{
+ "name": "PQC Deprecation Lint — RSA/ECC after 2030",
+ "subtitle": "Dates every quantum-vulnerable algorithm in your code against the NIST IR 8547 clock: deprecated after 2030-12-31, disallowed after 2035-12-31.",
+ "bin": "pqc-deprecation-lint",
+ "price": 29,
+ "free": "Check the file open in the editor and see every quantum-vulnerable algorithm in it, with line numbers and each one dated against the NIST IR 8547 clock for a date you choose",
+ "paid": "Sweep the whole workspace in one pass and write a dated migration report file you keep — the artifact for a customer security questionnaire, a migration ticket, or next quarter's diff",
+ "need_key": "This option needs a licence (PQC Deprecation Lint — RSA/ECC after 2030).",
+ "exts": []
+}

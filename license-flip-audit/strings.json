@@ -1,0 +1,10 @@
+{
+ "name": "License Flip Audit - BUSL/SSPL/AGPL in your deps",
+ "subtitle": "Finds the dependencies whose licence changed under you - Terraform 1.6+ BUSL, Redis 7.4+ SSPL, Bitnami's August 2025 move, Elastic 7.11 - and names the exact version where each flip happened.",
+ "bin": "license-flip-audit",
+ "price": 29,
+ "free": "Checks the manifest you have open end to end - every line, all 30 recorded flips, full findings, no watermark and no trial.",
+ "paid": "Scans every manifest in the workspace, exports the CSV/JSON/HTML report a security review asks for, re-checks on every save, and writes a JSON file CI can fail a pull request on.",
+ "need_key": "This option needs a licence (License Flip Audit - BUSL/SSPL/AGPL in your deps).",
+ "exts": []
+}

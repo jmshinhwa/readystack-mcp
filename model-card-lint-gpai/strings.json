@@ -1,0 +1,10 @@
+{
+ "name": "Model Card Lint - EU GPAI (AI Act Art. 53)",
+ "subtitle": "Lints a Hugging Face model card against the Hub metadata spec and the EU AI Act general-purpose AI documentation duties, line by line.",
+ "bin": "model-card-lint-gpai",
+ "price": 29,
+ "free": "Lint the model card you have open against all 28 rules, as often as you like - line number, rule id, the article it comes from, and the line to write instead. Runs locally, no key, no upload.",
+ "paid": "Lint every model card in the repository in one pass and export the dated audit as a file you keep: Markdown for the reviewer, JSON a CI step can fail on.",
+ "need_key": "This option needs a licence (Model Card Lint - EU GPAI (AI Act Art. 53)).",
+ "exts": []
+}

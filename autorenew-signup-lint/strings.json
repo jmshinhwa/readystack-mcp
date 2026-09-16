@@ -1,0 +1,10 @@
+{
+ "name": "Auto-Renewal Signup Lint (California ARL)",
+ "subtitle": "Sixteen statutory checks on the signup page AB 2863 rewrote, in your editor and in the browser",
+ "bin": "autorenew-signup-lint",
+ "price": 29,
+ "free": "Check the signup or pricing page open in the editor against all 16 rules, free and unlimited, plus the same engine free in the browser.",
+ "paid": "Sweep every matching page in the workspace and write one dated report file into the folder, yours to keep and attach to a review.",
+ "need_key": "This option needs a licence (Auto-Renewal Signup Lint (California ARL)).",
+ "exts": []
+}

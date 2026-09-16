@@ -1,0 +1,10 @@
+{
+ "name": "WCAG 2.1 AA Legal Baseline Audit for templates",
+ "subtitle": "Audits HTML, JSX, Vue, Twig, Blade, ERB and Razor markup against the 24 WCAG 2.1 Level AA checks that 28 CFR 35.200 and EN 301 549 actually name - not WCAG 2.2.",
+ "bin": "wcag21-aa-legal-baseline-audit",
+ "price": 29,
+ "free": "Audits the open template and names the WCAG 2.1 criterion and level for every finding; Audits only the lines you select, keeping the real line numbers; Prints the whole rule sheet - all 24 checks and the criterion each maps to",
+ "paid": "Audits every template in the workspace, not the one file you have open; Exports the findings as CSV, JSON or HTML; Applies the mechanical fixes in place; Re-audits automatically on every save",
+ "need_key": "This option needs a licence (WCAG 2.1 AA Legal Baseline Audit for templates).",
+ "exts": []
+}

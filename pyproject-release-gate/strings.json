@@ -1,0 +1,10 @@
+{
+ "name": "pyproject.toml Release Gate (PEP 639)",
+ "subtitle": "19 date-aware checks on the [project] metadata that decides whether your next release uploads",
+ "bin": "pyproject-release-gate",
+ "price": 29,
+ "free": "Every one of the 19 findings for the pyproject.toml open in your editor, with the line number, the spec that moved and the replacement text — nothing withheld, no watermark, no counter",
+ "paid": "Sweeping every pyproject.toml in a monorepo in one pass and writing a dated report file you keep in the repo and attach to a pull request",
+ "need_key": "This option needs a licence (pyproject.toml Release Gate (PEP 639)).",
+ "exts": []
+}

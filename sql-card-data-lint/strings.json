@@ -1,0 +1,10 @@
+{
+ "name": "SQL Card Data Lint (PCI DSS Req 3)",
+ "subtitle": "Names every column, index, view and seed row in a .sql migration that stores card data, with its PCI DSS Requirement 3 rule id",
+ "bin": "sql-card-data-lint",
+ "price": 29,
+ "free": "Check the .sql file open in your editor against all 10 rules and get every card-data column, index, view and seed literal with its Requirement 3 rule id and a replacement line",
+ "paid": "Sweep every migration in the workspace at once and write a dated findings report you keep and hand to an assessor, for team and commercial use",
+ "need_key": "This option needs a licence (SQL Card Data Lint (PCI DSS Req 3)).",
+ "exts": []
+}

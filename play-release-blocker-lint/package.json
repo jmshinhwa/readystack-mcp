@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/play-release-blocker-lint",
+  "version": "0.1.1",
+  "description": "Finds the lines that make Google Play reject your release - target API below 36, Billing Library below 8, 4 KB-only native libs - and prints the date each gate closed.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "android",
+    "google-play",
+    "target-sdk",
+    "api-36",
+    "billing-library"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_gyOsuR4TciVB1eezarZh5whJXfxrUOu4SDZCZ2hu1dw",
+  "bin": {
+    "play-release-blocker-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/play-release-blocker-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "play-release-blocker-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

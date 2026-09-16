@@ -1,0 +1,40 @@
+{
+  "name": "@readystack/dora-ict-contract-clause-lint",
+  "version": "1.0.1",
+  "description": "Twenty-two checks over the ICT vendor contracts in your repository - every missing Article 30 clause named, with the wording to paste in.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "dora",
+    "ict-contract",
+    "article-30",
+    "financial-entity",
+    "third-party-risk",
+    "eu-compliance"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_PyS5jRrYO7Qg2eYCctURo3heBw7Z5sPLx4UrE49Ms6L",
+  "bin": {
+    "dora-ict-contract-clause-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/dora-ict-contract-clause-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "dora-ict-contract-clause-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

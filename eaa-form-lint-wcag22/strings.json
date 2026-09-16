@@ -1,0 +1,10 @@
+{
+ "name": "EAA Form Lint: WCAG 2.2 AA for HTML",
+ "subtitle": "Names every WCAG 2.2 AA form failure on its line, with the criterion and the fix",
+ "bin": "eaa-form-lint-wcag22",
+ "price": 29,
+ "free": "Lints the HTML, Vue or Svelte file you have open with all 18 rules and names every WCAG 2.2 AA form failure on its line, with the success-criterion number and the one-line fix.",
+ "paid": "Scans every template in the workspace in one pass and writes a dated conformance evidence file you keep - one row per finding, per file, mapped to its WCAG 2.2 criterion.",
+ "need_key": "This option needs a licence (EAA Form Lint: WCAG 2.2 AA for HTML).",
+ "exts": []
+}

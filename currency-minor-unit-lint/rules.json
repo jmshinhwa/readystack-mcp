@@ -1,0 +1,150 @@
+[
+ {
+  "pattern": "Math\\.round\\s*\\(\\s*[^)]*\\*\\s*100\\s*\\)",
+  "flags": "",
+  "sev": "error",
+  "message": "Math.round(x * 100) hardcodes two decimals: it charges 100x in the 16 zero-decimal currencies (JPY, KRW, VND, XOF, CLP and the rest) and 10x too little in the 3-decimal ones (KWD, BHD, JOD, OMR, TND). Scale by the currency's ISO 4217 exponent."
+ },
+ {
+  "pattern": "\\bamount\\s*[:=]\\s*[^,;)\\n]*\\*\\s*100\\b",
+  "flags": "",
+  "sev": "error",
+  "message": "The amount field is built with * 100. Payment APIs take an integer of the currency's minor unit, and that unit is not 1/100 for every currency."
+ },
+ {
+  "pattern": "\\.toFixed\\(\\s*2\\s*\\)",
+  "flags": "",
+  "sev": "error",
+  "message": "toFixed(2) prints 1200.00 for JPY, which has no minor unit at all, and truncates KWD 1.234 to 1.23 - a real 0.004 KWD error on every line. Format with Intl.NumberFormat and the ISO code."
+ },
+ {
+  "pattern": "\\bamount\\s*[:=]\\s*\\d+\\.\\d+",
+  "flags": "",
+  "sev": "error",
+  "message": "amount is a decimal literal. The API expects an integer of minor units, so 10.99 is read as 10 or rejected outright."
+ },
+ {
+  "pattern": "parseFloat\\s*\\(\\s*[^)]*(amount|price|total|subtotal|cost|fee)",
+  "flags": "i",
+  "sev": "warn",
+  "message": "parseFloat on money gives a binary float: 0.1 + 0.2 is 0.30000000000000004. Carry money as an integer of minor units, never as a float."
+ },
+ {
+  "pattern": "([\\\"\\'])bgn\\1",
+  "flags": "",
+  "sev": "error",
+  "replace": "$1eur$1",
+  "message": "BGN: Bulgaria adopted the euro on 2026-01-01 and the lev stopped being legal tender on 2026-02-01. Charge \"eur\" - the fixed conversion was 1 EUR = 1.95583 BGN."
+ },
+ {
+  "pattern": "\\bBGN\\b",
+  "flags": "",
+  "sev": "error",
+  "replace": "EUR",
+  "message": "BGN: Bulgaria adopted the euro on 2026-01-01 and the lev stopped being legal tender on 2026-02-01. Charge EUR - the fixed conversion was 1 EUR = 1.95583 BGN."
+ },
+ {
+  "pattern": "([\\\"\\'])hrk\\1",
+  "flags": "",
+  "sev": "error",
+  "replace": "$1eur$1",
+  "message": "HRK was withdrawn when Croatia adopted the euro on 2023-01-01. Charge \"eur\" - the fixed conversion was 1 EUR = 7.53450 HRK."
+ },
+ {
+  "pattern": "\\bHRK\\b",
+  "flags": "",
+  "sev": "error",
+  "replace": "EUR",
+  "message": "HRK was withdrawn when Croatia adopted the euro on 2023-01-01. Charge EUR - the fixed conversion was 1 EUR = 7.53450 HRK."
+ },
+ {
+  "pattern": "[\\\"\\'](?:vef|mro|std|sll|zwl|ltl|eek|skk)[\\\"\\']|\\b(?:VEF|MRO|STD|SLL|ZWL|LTL|EEK|SKK)\\b",
+  "flags": "",
+  "sev": "error",
+  "message": "Retired ISO 4217 code. VEF is now VES, MRO is MRU, STD is STN, SLL is SLE, ZWL is ZWG, and LTL, EEK and SKK were replaced by EUR. A retired code is rejected, so the charge never happens."
+ },
+ {
+  "pattern": "[\\\"\\'](?:isk|ugx)[\\\"\\']|\\b(?:ISK|UGX)\\b",
+  "flags": "",
+  "sev": "warn",
+  "message": "ISK and UGX are zero-decimal, but payment APIs still expect a two-decimal value whose last two digits are 00 - 5 ISK is amount 500. Sending 5 undercharges by 100x."
+ },
+ {
+  "pattern": "[\\\"\\'](?:bhd|iqd|jod|kwd|lyd|omr|tnd)[\\\"\\']|\\b(?:BHD|IQD|JOD|KWD|LYD|OMR|TND)\\b",
+  "flags": "",
+  "sev": "warn",
+  "message": "3-decimal currency (ISO 4217 exponent 3). The amount is in thousandths and the last digit must be 0: KWD 1.5 is 1500, not 150."
+ },
+ {
+  "pattern": "[\\\"\\'](?:bif|clp|djf|gnf|jpy|kmf|krw|mga|pyg|rwf|vnd|vuv|xaf|xof|xpf)[\\\"\\']|\\b(?:BIF|CLP|DJF|GNF|JPY|KMF|KRW|MGA|PYG|RWF|VND|VUV|XAF|XOF|XPF)\\b",
+  "flags": "",
+  "sev": "info",
+  "message": "Zero-decimal currency: the amount IS the charge. 500 JPY is amount 500, so any multiplication by 100 on this line charges 100x."
+ },
+ {
+  "pattern": "[\\\"\\'](?:huf|twd)[\\\"\\']|\\b(?:HUF|TWD)\\b",
+  "flags": "",
+  "sev": "info",
+  "message": "HUF and TWD are charged with two decimals but paid out as zero-decimal: a manual payout amount must be evenly divisible by 100, so a balance of 1045 cannot be paid out in full."
+ },
+ {
+  "pattern": "[\\\"']\\$[\\\"']\\s*\\+",
+  "flags": "",
+  "sev": "warn",
+  "message": "'$' + amount hardcodes the symbol and the en-US grouping. The same value must read 1.234,56 with the symbol after the number in de-DE. Use Intl.NumberFormat(locale, {style:'currency', currency})."
+ },
+ {
+  "pattern": "style\\s*:\\s*[\\\"']currency[\\\"'](?![^\\n]*\\bcurrency\\s*:)",
+  "flags": "",
+  "sev": "error",
+  "message": "Intl.NumberFormat with style 'currency' and no currency option throws a TypeError at runtime, not at build time."
+ },
+ {
+  "pattern": "\\b(tax|vat|gst)\\w*\\s*=\\s*Math\\.round|Math\\.round\\s*\\(\\s*[^)]*(tax|vat|gst)",
+  "flags": "i",
+  "sev": "warn",
+  "message": "Math.round on a float tax amount rounds 1.005 down to 1, because 1.005 is stored as 1.00499999999999989. Round on integer minor units instead."
+ },
+ {
+  "pattern": "\\b(rate|fx|exchange_rate|exchangeRate)\\s*[:=]\\s*\\d+\\.\\d{3,}",
+  "flags": "i",
+  "sev": "warn",
+  "message": "A hardcoded FX rate. Only the euro conversion rates are legally fixed (1 EUR = 1.95583 BGN and 7.53450 HRK); every other rate moves daily."
+ },
+ {
+  "pattern": "\\b(cents|minorUnits|minor_units|smallestUnit)\\w*\\s*[:=]\\s*\\d+\\.\\d+",
+  "flags": "i",
+  "sev": "error",
+  "message": "A variable named for minor units is holding a decimal. Minor units are whole numbers by definition, so this value is already wrong before it is sent."
+ },
+ {
+  "pattern": "\\b(amount|total|price|balance)\\w*\\s*[!=]==?\\s*\\d+\\.\\d+",
+  "flags": "i",
+  "sev": "warn",
+  "message": "Comparing a money float for equality. 0.1 + 0.2 === 0.3 is false in every IEEE-754 language, so this branch silently never runs."
+ },
+ {
+  "pattern": "parseInt\\s*\\(\\s*[^)]*toFixed",
+  "flags": "",
+  "sev": "warn",
+  "message": "parseInt(x.toFixed(...)) truncates at the first non-digit, so 1.99 becomes 1 - the decimal part is dropped, not scaled."
+ },
+ {
+  "pattern": "\\/\\s*100\\b",
+  "flags": "",
+  "sev": "info",
+  "message": "Dividing by 100 to display an amount assumes two decimals. For JPY it divides the charge by 100; for KWD it leaves the last digit in the wrong place."
+ },
+ {
+  "pattern": "\\btoLocaleString\\s*\\(\\s*\\)",
+  "flags": "",
+  "sev": "info",
+  "message": "toLocaleString() with no arguments formats with the machine's locale, so a server in Frankfurt prints a different number than a laptop in Chicago."
+ },
+ {
+  "pattern": "\\bNumber\\s*\\(\\s*[^)]*(amount|price|total)",
+  "flags": "i",
+  "sev": "info",
+  "message": "Number() on a money string produces a float, the same trap as parseFloat: the value can no longer be summed or compared exactly."
+ }
+]

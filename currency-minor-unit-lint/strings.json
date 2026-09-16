@@ -1,0 +1,10 @@
+{
+ "name": "Currency Minor Unit Lint",
+ "subtitle": "Finds the money lines that send the wrong amount to a payment API: the x100 that charges 100x in JPY, the toFixed(2) that truncates KWD, and the currency codes that stopped being legal tender.",
+ "bin": "currency-minor-unit-lint",
+ "price": 29,
+ "free": "Checks the file you have open against all 24 rules and names every wrong amount, its currency, its ISO 4217 exponent and the date a code changed - no key, no limit, no watermark.",
+ "paid": "Scans every file in the repository, fails a CI build before a wrong amount can merge, exports the findings as CSV, JSON or HTML, and rewrites the retired currency codes in place.",
+ "need_key": "This option needs a licence (Currency Minor Unit Lint).",
+ "exts": []
+}

@@ -1,0 +1,10 @@
+{
+ "name": "WordPress Privacy Lint (GDPR / DSGVO)",
+ "subtitle": "Finds the 12 author-side privacy duties your plugin PHP breaks, with the article and the fix on every line.",
+ "bin": "wordpress-privacy-lint",
+ "price": 29,
+ "free": "Audits the PHP file you have open against all 12 author-side GDPR/DSGVO rules and names the article and the fix for every hit.",
+ "paid": "Scans every PHP file in the whole plugin in one run and writes a dated audit report you keep (Markdown and JSON) for the WordPress.org review reply and your Art. 30 records.",
+ "need_key": "This option needs a licence (WordPress Privacy Lint (GDPR / DSGVO)).",
+ "exts": []
+}

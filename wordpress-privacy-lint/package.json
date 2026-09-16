@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/wordpress-privacy-lint",
+  "version": "1.0.1",
+  "description": "Finds the 12 author-side privacy duties your plugin PHP breaks, with the article and the fix on every line.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "wordpress",
+    "gdpr",
+    "dsgvo",
+    "privacy",
+    "php",
+    "plugin-review",
+    "lint",
+    "datenschutz"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_sZ2Bgyx7lAEhKmhzceABGE3rRlKWXaJxUrjPm48Q1KV",
+  "bin": {
+    "wordpress-privacy-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/wordpress-privacy-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "wordpress-privacy-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

@@ -1,0 +1,10 @@
+{
+ "name": "Opt-Out Signal Lint for US State Privacy Laws",
+ "subtitle": "Finds the ad and analytics code that keeps firing after a visitor’s browser has already sent Global Privacy Control.",
+ "bin": "optout-signal-lint",
+ "price": 29,
+ "free": "Audits the file you have open — every line against all 20 rules, no key, no limit, no sign-up.",
+ "paid": "Sweeps the whole workspace, writes the finding list to CSV, JSON or HTML, and returns a CI exit code so the same leak cannot merge twice.",
+ "need_key": "This option needs a licence (Opt-Out Signal Lint for US State Privacy Laws).",
+ "exts": []
+}

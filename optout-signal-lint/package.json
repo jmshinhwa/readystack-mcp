@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/optout-signal-lint",
+  "version": "0.1.1",
+  "description": "Finds the ad and analytics code that keeps firing after a visitor’s browser has already sent Global Privacy Control.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "privacy",
+    "gpc",
+    "ccpa",
+    "consent",
+    "analytics"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_gj151VTqWFpXoYSJLn1MtTGUJrDV3N8bEeFLH4cORhY",
+  "bin": {
+    "optout-signal-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/optout-signal-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "optout-signal-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

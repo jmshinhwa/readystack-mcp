@@ -1,0 +1,10 @@
+{
+ "name": "VSIX Publish Lint",
+ "subtitle": "Find the package.json lines that stop vsce before you run the release build",
+ "bin": "vsix-publish-lint",
+ "price": 29,
+ "free": "Lints the extension manifest you have open against all 16 rules and names, line by line, the exact field to change",
+ "paid": "Lints every extension manifest in the workspace in one pass and writes the result out as a JSON or SARIF file you keep and run in CI",
+ "need_key": "This option needs a licence (VSIX Publish Lint).",
+ "exts": []
+}

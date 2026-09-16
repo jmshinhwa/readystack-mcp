@@ -1,0 +1,10 @@
+{
+ "name": "PII-in-Logs Lint (console.log(req.body))",
+ "subtitle": "22 rules that name the lines where a Node or TypeScript service writes personal data into logs, crash reports and analytics — with the article it touches and the one-line fix.",
+ "bin": "log-pii-telemetry-lint",
+ "price": 29,
+ "free": "Names every line in the file you have open that writes personal data into a log, a crash report or an analytics call, with the rule, the article it touches and the one-line fix — enough to clean that file and stop.",
+ "paid": "Runs the same 22 rules across every .js/.ts file in the workspace and writes the findings out as a report file you keep for CI, the ticket or the auditor.",
+ "need_key": "This option needs a licence (PII-in-Logs Lint (console.log(req.body))).",
+ "exts": []
+}

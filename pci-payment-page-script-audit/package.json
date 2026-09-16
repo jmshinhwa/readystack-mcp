@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/pci-payment-page-script-audit",
+  "version": "0.1.1",
+  "description": "PCI DSS 4.0.1 requirements 6.4.3 and 11.6.1 have been mandatory since 2025-03-31, and the PCI SSC revised FAQ 1331 on 2026-08-04 so a QSA agreement alone no longer marks them not applicable. This read",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "pci-dss",
+    "payment",
+    "csp",
+    "security",
+    "ecommerce"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_FKoJOcDSLKquM3gnPEkdjzJ89osFHC7TgbEej21i5FQ",
+  "bin": {
+    "pci-payment-page-script-audit": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/pci-payment-page-script-audit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "pci-payment-page-script-audit"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

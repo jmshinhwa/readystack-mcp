@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/currency-minor-unit-lint",
+  "version": "0.1.1",
+  "description": "Finds the money lines that send the wrong amount to a payment API: the x100 that charges 100x in JPY, the toFixed(2) that truncates KWD, and the currency codes that stopped being legal tender.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "currency",
+    "money",
+    "payments",
+    "rounding",
+    "iso4217"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_acLdPf1V4wK36zA20Zdz5ARBivvJMJv1kJ9JI2lqb50",
+  "bin": {
+    "currency-minor-unit-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/currency-minor-unit-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "currency-minor-unit-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

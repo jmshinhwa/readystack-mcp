@@ -1,0 +1,10 @@
+{
+ "name": "Google Play Release Blocker Lint - target API 36, Billing 8, 16 KB",
+ "subtitle": "Finds the lines that make Google Play reject your release - target API below 36, Billing Library below 8, 4 KB-only native libs - and prints the date each gate closed.",
+ "bin": "play-release-blocker-lint",
+ "price": 29,
+ "free": "Full check of the file you have open - every rule, every line, with the gate date and the fix; Reopen the last report without re-running the scan; See every Play gate rule, its severity and its deadline",
+ "paid": "Every module, flavour and manifest in the repo at once; Machine-readable output your CI can fail on; A dated release-readiness report you can hand to a client or a lead; Re-checks on every save while you migrate",
+ "need_key": "This option needs a licence (Google Play Release Blocker Lint - target API 36, Billing 8, 16 KB).",
+ "exts": []
+}

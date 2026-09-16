@@ -1,0 +1,10 @@
+{
+ "name": "WCAG 2.2 CSS Lint - Focus & Target Size",
+ "subtitle": "Reads your stylesheet and names the success criterion each rule breaks, including the three WCAG 2.2 added that WCAG 2.1 linters never learned.",
+ "bin": "wcag22-css-lint",
+ "price": 29,
+ "free": "Lint the stylesheet you have open against all 14 rules, with the success criterion number, the failing line and the fix on every finding.",
+ "paid": "Scan every stylesheet in the workspace in one pass and export the findings as a dated criterion-by-criterion evidence table (Markdown + CSV) you keep and attach to your accessibility statement.",
+ "need_key": "This option needs a licence (WCAG 2.2 CSS Lint - Focus & Target Size).",
+ "exts": []
+}

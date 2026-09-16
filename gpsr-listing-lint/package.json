@@ -1,0 +1,41 @@
+{
+  "name": "@readystack/gpsr-listing-lint",
+  "version": "1.0.1",
+  "description": "Audits a product feed row by row against Article 19 of the EU General Product Safety Regulation",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "gpsr",
+    "product feed",
+    "ecommerce",
+    "compliance",
+    "csv",
+    "eu",
+    "marketplace"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_MeEOXqXAf3FoF5aXVJjeeyaoJJNIODsmsm5CK0skgvG",
+  "bin": {
+    "gpsr-listing-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/gpsr-listing-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "gpsr-listing-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

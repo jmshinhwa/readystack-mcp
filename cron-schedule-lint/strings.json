@@ -1,0 +1,10 @@
+{
+ "name": "Cron Schedule Lint for crontab, Kubernetes CronJob, GitHub Actions, Spring and EventBridge",
+ "subtitle": "Names every schedule line in the file you have open that fires at the wrong hour, twice, or never at all - and prints the next three times each one really fires, in the zone that actually applies.",
+ "bin": "cron-schedule-lint",
+ "price": 29,
+ "free": "Checks the file you have open against all 29 rules and, for every schedule line, prints the next three instants it really fires at, how many times it fires in a year, and the exact dates when that wall-clock time does not exist or happens twice - no key, no limit, no watermark.",
+ "paid": "Merges every schedule in the repository into one calendar instead of the single file you have open, exports it as CSV, JSON or HTML for a change review, and writes machine output a CI step can fail on so a merge cannot add a schedule that never fires.",
+ "need_key": "This option needs a licence (Cron Schedule Lint for crontab, Kubernetes CronJob, GitHub Actions, Spring and EventBridge).",
+ "exts": []
+}

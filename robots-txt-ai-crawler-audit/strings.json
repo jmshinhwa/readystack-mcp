@@ -1,0 +1,10 @@
+{
+ "name": "AI Crawler Rules - robots.txt Audit for AI Search",
+ "subtitle": "Checks robots.txt line by line and says what each AI crawler token actually controls - training, AI-search citation, or user fetch - and which lines silently do nothing.",
+ "bin": "robots-txt-ai-crawler-audit",
+ "price": 29,
+ "free": "Check the open robots.txt against every rule - full results, nothing withheld; Check only the lines you highlight; See every rule and what each AI token controls; Reopen the last report",
+ "paid": "Scan every robots.txt in the workspace; Export the report as CSV, JSON or HTML; CI output that fails the build on errors; Add your own agency policy tokens; Re-check automatically on every save",
+ "need_key": "This option needs a licence (AI Crawler Rules - robots.txt Audit for AI Search).",
+ "exts": []
+}

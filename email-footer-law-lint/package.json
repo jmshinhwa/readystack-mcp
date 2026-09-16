@@ -1,0 +1,43 @@
+{
+  "name": "@readystack/email-footer-law-lint",
+  "version": "1.0.2",
+  "description": "Fourteen checks on an HTML email footer: CAN-SPAM postal address and 10-business-day opt-out, CASL's 60-day window, and German 5 DDG, the statute that replaced 5 TMG on 2024-05-14.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "email",
+    "can-spam",
+    "casl",
+    "ddg",
+    "impressum",
+    "unsubscribe",
+    "html email",
+    "compliance",
+    "deliverability"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_UpcPQkomm2d1N52PaYHHfPjdB89okIRPLaTa70CzAj0",
+  "bin": {
+    "email-footer-law-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/email-footer-law-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "email-footer-law-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/cron-schedule-lint",
+  "version": "0.1.1",
+  "description": "Names every schedule line in the file you have open that fires at the wrong hour, twice, or never at all - and prints the next three times each one really fires, in the zone that actually applies.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "cron",
+    "kubernetes",
+    "github-actions",
+    "timezone",
+    "scheduling"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_t0Tavjz6GbjmBsKk04ImLmG6Y3VDIbuP0pht50WAFPX",
+  "bin": {
+    "cron-schedule-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/cron-schedule-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "cron-schedule-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

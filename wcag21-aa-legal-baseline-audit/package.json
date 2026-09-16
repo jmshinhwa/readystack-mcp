@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/wcag21-aa-legal-baseline-audit",
+  "version": "0.1.1",
+  "description": "Audits HTML, JSX, Vue, Twig, Blade, ERB and Razor markup against the 24 WCAG 2.1 Level AA checks that 28 CFR 35.200 and EN 301 549 actually name - not WCAG 2.2.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "wcag",
+    "accessibility",
+    "ada-title-ii",
+    "en-301-549",
+    "a11y"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_RArnwX2pmZk48V2VCw2Ep19h2Nnf5FgaiN4oI3Y2nZu",
+  "bin": {
+    "wcag21-aa-legal-baseline-audit": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/wcag21-aa-legal-baseline-audit",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "wcag21-aa-legal-baseline-audit"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/cloud-cost-landmine-lint",
+  "version": "0.1.1",
+  "description": "Names every line in the file you have open that starts a recurring cloud charge, with the published us-east-1 price and the date it changes by itself.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "terraform",
+    "aws",
+    "finops",
+    "cost",
+    "kubernetes"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_Ia8TdkkJhasNMqHS8HGMSeb7xmNWI6NKp02Mt3Fj1JG",
+  "bin": {
+    "cloud-cost-landmine-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/cloud-cost-landmine-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "cloud-cost-landmine-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

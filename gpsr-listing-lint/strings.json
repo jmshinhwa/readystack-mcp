@@ -1,0 +1,10 @@
+{
+ "name": "GPSR Listing Lint",
+ "subtitle": "Audits a product feed row by row against Article 19 of the EU General Product Safety Regulation",
+ "bin": "gpsr-listing-lint",
+ "price": 29,
+ "free": "Open any product feed file and see every listing row that is missing a GPSR Article 19 field, with its line number and the exact article it fails — no key, nothing uploaded.",
+ "paid": "Export a dated evidence pack for the whole workspace catalogue — every feed file, every failing row, per-rule counts — as CSV and Markdown you can hand to a marketplace, importer or auditor.",
+ "need_key": "This option needs a licence (GPSR Listing Lint).",
+ "exts": []
+}

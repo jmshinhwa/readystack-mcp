@@ -1,0 +1,10 @@
+{
+ "name": "AI Model Retirement Lint",
+ "subtitle": "Finds the LLM model IDs pinned in your code that vendors have already switched off, or have dated to switch off, with the replacement and the date.",
+ "bin": "ai-model-retirement-lint",
+ "price": 29,
+ "free": "Checks the file you have open against all 33 rules and names every retired or expiring model ID, its date and the vendor's replacement - no key, no limit, no watermark.",
+ "paid": "Scans every file in the repository, emits CI output that fails the build before a dead model ID can merge, and applies the vendor's replacement in place.",
+ "need_key": "This option needs a licence (AI Model Retirement Lint).",
+ "exts": []
+}

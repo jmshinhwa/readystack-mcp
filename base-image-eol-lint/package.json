@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/base-image-eol-lint",
+  "version": "0.1.1",
+  "description": "Marks every base image in your Dockerfiles, compose files and CI workflows whose security patches have already stopped - or stop before 13 November 2026 - and prints the tag that replaces it.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "docker",
+    "dockerfile",
+    "end-of-life",
+    "base-image",
+    "compose"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_brZKgBkvnYrEIMElB5Ynt5gGEnqmTjvx9r9ZX3ljztR",
+  "bin": {
+    "base-image-eol-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/base-image-eol-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "base-image-eol-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

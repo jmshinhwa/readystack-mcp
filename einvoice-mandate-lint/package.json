@@ -1,0 +1,42 @@
+{
+  "name": "@readystack/einvoice-mandate-lint",
+  "version": "1.0.2",
+  "description": "Lints UBL and CII invoice XML against EN 16931 and the national e-invoicing mandates that are live in 2026",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "e-invoicing",
+    "en16931",
+    "peppol",
+    "xrechnung",
+    "ubl",
+    "factur-x",
+    "ksef",
+    "vat"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_V1RBWcrS00NsYLx6EMXeji1xvbix6LF1yO9qR4DduBz",
+  "bin": {
+    "einvoice-mandate-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/einvoice-mandate-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "einvoice-mandate-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt",
+    "engine.js"
+  ]
+}

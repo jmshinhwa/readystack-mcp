@@ -1,0 +1,10 @@
+{
+ "name": "Privacy Manifest Lint - xcprivacy & ITMS-91053",
+ "subtitle": "Checks PrivacyInfo.xcprivacy and your C#, Dart, JS, Swift and Kotlin source for Apple required-reason APIs, and decodes all 17 reason codes back to the category they belong to.",
+ "bin": "privacy-manifest-lint",
+ "price": 29,
+ "free": "Decodes all 17 reason codes back to the category they belong to, with Apple's condition; Flags reason codes Apple never issued - the ones a chatbot invents; Finds required-reason API call sites in C#, Dart, JS/TS, Swift, Obj-C and Kotlin; Flags misspelled manifest keys and category names",
+ "paid": "Whole repo, not one open file; Take the report away as CSV, JSON or HTML; CI JSON your pipeline can gate on; Fixes the misspelled keys in place",
+ "need_key": "This option needs a licence (Privacy Manifest Lint - xcprivacy & ITMS-91053).",
+ "exts": []
+}

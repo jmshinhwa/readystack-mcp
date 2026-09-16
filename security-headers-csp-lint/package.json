@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/security-headers-csp-lint",
+  "version": "0.1.1",
+  "description": "Reads security headers and CSP line by line in your config file and names the lines that silently do nothing: retired headers, keywords missing their quotes, directives the browser throws away.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "CSP",
+    "Content-Security-Policy",
+    "security headers",
+    "HSTS",
+    "Permissions-Policy"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_DxnwX3BvMThBo4369WHczw3OVdSlhjnkHsoJb0ZEGWd",
+  "bin": {
+    "security-headers-csp-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/security-headers-csp-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "security-headers-csp-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

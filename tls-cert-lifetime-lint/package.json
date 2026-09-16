@@ -1,0 +1,38 @@
+{
+  "name": "@readystack/tls-cert-lifetime-lint",
+  "version": "0.1.1",
+  "description": "Finds the 12 settings that break when public TLS certificates fall to 100 days on 2027-03-15: openssl -days, Terraform, cert-manager, late expiry alerts, HPKP, TLS 1.0/1.1, SHA-1, RSA-1024.",
+  "license": "SEE LICENSE IN LICENSE.txt",
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [
+    "tls",
+    "sc-081",
+    "cert-manager",
+    "terraform",
+    "acme"
+  ],
+  "homepage": "https://getreadystack.com",
+  "funding": "https://buy.polar.sh/polar_cl_SnmEdHDa8OjzORnIjOry1XW7LZozu9qDBYIIc1eBSB5",
+  "bin": {
+    "tls-cert-lifetime-lint": "cli.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "mcpName": "io.github.jmshinhwa/tls-cert-lifetime-lint",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jmshinhwa/readystack-themes.git",
+    "directory": "tls-cert-lifetime-lint"
+  },
+  "files": [
+    "cli.js",
+    "license.js",
+    "rules.json",
+    "strings.json",
+    "README.md",
+    "LICENSE.txt"
+  ]
+}

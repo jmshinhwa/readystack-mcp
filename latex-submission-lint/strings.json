@@ -1,0 +1,10 @@
+{
+ "name": "LaTeX Submission Lint: Desk-Reject Check",
+ "subtitle": "Seventeen rules on your .tex file: the statements the editorial office looks for, and the source that breaks the publisher's build.",
+ "bin": "latex-submission-lint",
+ "price": 29,
+ "free": "Checks the .tex file you have open against all 17 submission rules and writes a line-numbered report of every statement the publisher will look for and cannot find.",
+ "paid": "Runs the same 17 rules over every .tex file in the project, follows the include chain of a split manuscript, and exports one submission-readiness report for the whole paper.",
+ "need_key": "This option needs a licence (LaTeX Submission Lint: Desk-Reject Check).",
+ "exts": []
+}

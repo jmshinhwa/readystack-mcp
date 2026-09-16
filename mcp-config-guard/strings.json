@@ -1,0 +1,10 @@
+{
+ "name": "MCP Config Guard - agent config lint",
+ "subtitle": "Reads .mcp.json / .vscode/mcp.json / claude_desktop_config.json while you edit it and marks the lines that hand an AI agent more than you meant - unpinned servers, literal credentials, plaintext transport, whole-home filesystem roots. 23 rules, offline, no server is ever started.",
+ "bin": "mcp-config-guard",
+ "price": 29,
+ "free": "Check the MCP config file you have open against all 23 rules - the line number, one sentence on what goes wrong, and the line that replaces it - offline, no key, no limit.",
+ "paid": "Scale and hand-off: one sweep over every MCP config in the workspace and in the client config folders, a dated CSV/JSON/HTML report, and machine-readable output a CI step can fail on.",
+ "need_key": "This option needs a licence (MCP Config Guard - agent config lint).",
+ "exts": []
+}

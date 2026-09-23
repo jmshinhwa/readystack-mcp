@@ -4,6 +4,15 @@ Regulation- and deadline-aware linters (EU CRA / CSAF, PCI DSS 6.4.3, WCAG 2.1 A
 
 Every folder in this repository is one npm package `@readystack/<name>`. The same package runs three ways: as a **stdio MCP server** (`--mcp`), as a **CLI**, and as a **CI step**. No network calls: every rule set ships inside the package and runs offline on the files you point it at.
 
+## Remote MCP server - no install (ChatGPT · Claude · Gemini · Cursor)
+
+`https://mcp.getreadystack.com/mcp` - streamable HTTP, no account, no key. Two tools: `find_checker` (search every standing checker by regulation, deadline, file type or platform, in any language) and `run_checker` (run one checker on pasted text and get each finding with its line and fix). The text you send is checked in memory and never stored. New checkers appear on the server as they are published.
+
+- **Claude** (claude.ai / Desktop): Settings → Connectors → Add custom connector → `https://mcp.getreadystack.com/mcp`
+- **ChatGPT** (developer mode): Settings → Apps → Create → MCP server URL `https://mcp.getreadystack.com/mcp`, no authentication
+- **Gemini CLI**: `gemini extensions install https://github.com/jmshinhwa/readystack-mcp` (this repository ships `gemini-extension.json`)
+- **Cursor / VS Code / any client**: `{ "mcpServers": { "readystack": { "url": "https://mcp.getreadystack.com/mcp" } } }`
+
 ## Run as an MCP server (Claude Code · Cursor · Windsurf · any MCP client)
 
 ```json

@@ -1,0 +1,11 @@
+{
+  "name": "readystack-compliance-lint",
+  "version": "1.0.0",
+  "description": "Rule-based compliance and deadline checkers (EU CRA, GDPR, EU accessibility / EAA, PCI DSS, e-invoicing, payroll and tax rules, GitHub Actions and platform deprecations) that Gemini can run on a file or pasted text.",
+  "mcpServers": {
+    "readystack": {
+      "httpUrl": "https://mcp.getreadystack.com/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}

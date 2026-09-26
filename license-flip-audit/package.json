@@ -1,6 +1,6 @@
 {
   "name": "@readystack/license-flip-audit",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Finds the dependencies whose licence changed under you - Terraform 1.6+ BUSL, Redis 7.4+ SSPL, Bitnami's August 2025 move, Elastic 7.11 - and names the exact version where each flip happened.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

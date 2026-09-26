@@ -1,6 +1,6 @@
 {
   "name": "@readystack/wcag21-aa-legal-baseline-audit",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Audits HTML, JSX, Vue, Twig, Blade, ERB and Razor markup against the 24 WCAG 2.1 Level AA checks that 28 CFR 35.200 and EN 301 549 actually name - not WCAG 2.2.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

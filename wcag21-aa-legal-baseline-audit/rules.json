@@ -8,7 +8,7 @@
  },
  {
   "sev": "error",
-  "pattern": "<img\\b(?![^>]*\\s(?:alt|aria-label|aria-labelledby)\\s*=)",
+  "pattern": "<img\\b(?![^>]*\\s(?:alt(?=[\\s=/>]|$)|aria-label\\s*=|aria-labelledby\\s*=|role\\s*=\\s*[\"\\']?(?:presentation|none)\\b|aria-hidden\\s*=\\s*[\"\\']?true\\b))",
   "flags": "i",
   "message": "1.1.1 Non-text Content (A) - <img> has no alt. Use alt=\"\" only when the image is decorative.",
   "fix": "Add alt text, or alt=\"\" if the image is decorative."
@@ -144,7 +144,7 @@
  },
  {
   "sev": "error",
-  "pattern": "<(?:a|button|input|select|textarea)\\b[^>]*\\saria-hidden\\s*=\\s*[\"\\']?true",
+  "pattern": "<(?:a\\b(?=[^>]*\\shref\\s*=)|(?:button|input|select|textarea)\\b)(?![^>]*\\stabindex\\s*=\\s*[\"\\']?-1)(?![^>]*\\sdisabled(?=[\\s=/>]|$))[^>]*\\saria-hidden\\s*=\\s*[\"\\']?true",
   "flags": "i",
   "message": "4.1.2 Name, Role, Value (A) - aria-hidden=\"true\" on a focusable control. Tab lands on something the screen reader cannot see.",
   "fix": "Remove aria-hidden, or take the control out of the tab order too."
@@ -165,7 +165,7 @@
  },
  {
   "sev": "error",
-  "pattern": "<[a-z][a-z0-9]*\\b(?![^>]*\\stabindex\\s*=)[^>]*\\srole\\s*=\\s*[\"\\']button[\"\\']",
+  "pattern": "<(?!(?:button|input|select|textarea|summary)\\b|(?:a|area)\\b[^>]*\\shref\\s*=)[a-z][a-z0-9]*\\b(?![^>]*\\stabindex\\s*=)[^>]*\\srole\\s*=\\s*[\"\\']button[\"\\']",
   "flags": "i",
   "message": "2.1.1 Keyboard (A) - role=\"button\" without tabindex. It announces as a button but cannot be focused.",
   "fix": "Add tabindex=\"0\", or use a real <button>."

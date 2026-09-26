@@ -1,6 +1,6 @@
 {
   "name": "@readystack/k8s-removed-api-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "15 checks for the apiVersions kubectl no longer serves, on the manifest open in your editor",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@readystack/latex-submission-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Seventeen rules on your .tex file: the statements the editorial office looks for, and the source that breaks the publisher's build.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@readystack/mcp-2026-migration-lint",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "The 2026-07-28 MCP revision removed the initialize handshake, sessions, ping and 4 more RPCs. 27 rules find them in your mcp.json and server code, with the replacement on each line.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

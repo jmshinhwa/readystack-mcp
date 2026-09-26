@@ -1,6 +1,6 @@
 {
   "name": "@readystack/vsix-publish-lint",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Find the package.json lines that stop vsce before you run the release build",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

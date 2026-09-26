@@ -1,6 +1,6 @@
 {
   "name": "@readystack/dora-register-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "24 checks on the register CSV before it reaches the supervisor — LEI check digits, ISO dates and codes, references that resolve",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

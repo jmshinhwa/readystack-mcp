@@ -1,6 +1,6 @@
 {
   "name": "@readystack/wordpress-privacy-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Finds the 12 author-side privacy duties your plugin PHP breaks, with the article and the fix on every line.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

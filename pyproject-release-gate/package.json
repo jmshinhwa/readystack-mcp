@@ -1,6 +1,6 @@
 {
   "name": "@readystack/pyproject-release-gate",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "19 date-aware checks on the [project] metadata that decides whether your next release uploads",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

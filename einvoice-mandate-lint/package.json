@@ -1,6 +1,6 @@
 {
   "name": "@readystack/einvoice-mandate-lint",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Lints UBL and CII invoice XML against EN 16931 and the national e-invoicing mandates that are live in 2026",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

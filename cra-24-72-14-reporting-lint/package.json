@@ -1,6 +1,6 @@
 {
   "name": "@readystack/cra-24-72-14-reporting-lint",
-  "version": "1.0.1",
+  "version": "1.0.6",
   "description": "Reads your SECURITY.md against the EU Cyber Resilience Act reporting clock that started on 11 September 2026 — 24 hours, 72 hours, 14 days, to ENISA and your coordinating CSIRT.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

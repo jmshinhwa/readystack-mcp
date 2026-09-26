@@ -1,6 +1,6 @@
 {
   "name": "@readystack/currency-minor-unit-lint",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Finds the money lines that send the wrong amount to a payment API: the x100 that charges 100x in JPY, the toFixed(2) that truncates KWD, and the currency codes that stopped being legal tender.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

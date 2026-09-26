@@ -1,6 +1,6 @@
 {
   "name": "@readystack/gpsr-listing-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Audits a product feed row by row against Article 19 of the EU General Product Safety Regulation",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

@@ -1,6 +1,6 @@
 {
   "name": "@readystack/model-card-lint-gpai",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Lints a Hugging Face model card against the Hub metadata spec and the EU AI Act general-purpose AI documentation duties, line by line.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

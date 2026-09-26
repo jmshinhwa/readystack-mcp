@@ -1,6 +1,6 @@
 {
   "name": "@readystack/france-einvoice-reception-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "12 checks for the French mandatory mentions a PDP rejects, on Factur-X, UBL and CII invoices",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

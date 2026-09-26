@@ -1,6 +1,6 @@
 {
   "name": "@readystack/dora-ict-contract-clause-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Twenty-two checks over the ICT vendor contracts in your repository - every missing Article 30 clause named, with the wording to paste in.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

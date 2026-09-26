@@ -1,6 +1,6 @@
 {
   "name": "@readystack/log-pii-telemetry-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "22 rules that name the lines where a Node or TypeScript service writes personal data into logs, crash reports and analytics — with the article it touches and the one-line fix.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

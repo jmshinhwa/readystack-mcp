@@ -16,7 +16,7 @@ function isText(p) { try { const b = fs.readFileSync(p); if (b.length > 2 * 1024
 function walk(dir, exts, out) {
   let ents = []; try { ents = fs.readdirSync(dir, { withFileTypes: true }); } catch (e) { return out; }
   for (const e of ents) {
-    if (e.name === 'node_modules' || e.name === '.git' || e.name.startsWith('.')) continue;
+    if (['node_modules', '.git', '.hg', '.svn', '.venv', 'venv', '.tox', '.cache', '.next', '.nuxt', '.terraform', '__pycache__'].includes(e.name)) continue;   // s158 — .github · .gitlab-ci.yml · .env · .well-known 은 본다 (옛 줄은 점으로 시작하는 것을 전부 건너뛰어 워크플로 검사기가 .github/workflows 를 못 봤다)
     const p = path.join(dir, e.name);
     if (e.isDirectory()) walk(p, exts, out);
     else if ((!exts.length || exts.includes(path.extname(e.name).toLowerCase())) && isText(p)) out.push(p);
@@ -39,22 +39,55 @@ function render(rows, fmt) {
   return o;
 }
 function trialState() {
+  // s158 — ⚑7일 무료 없음: 새 체험은 ⛔열지 않는다 · 이미 시작된 체험(trial.json)만 끝까지 지킨다 (읽기 전용)
   if (process.env.READYSTACK_NO_TRIAL) return { active: false };
   try {
     const p = path.join(path.dirname(lic.storePath()), S.bin + '.trial.json');
-    let t = null; try { t = JSON.parse(fs.readFileSync(p, 'utf8')); } catch (e) {}
-    if (!t || !t.until) { t = { until: new Date(Date.now() + 7 * 24 * 3600 * 1000).toISOString().slice(0, 10) }; fs.mkdirSync(path.dirname(p), { recursive: true }); fs.writeFileSync(p, JSON.stringify(t)); }
-    return { active: new Date(t.until + 'T23:59:59Z').getTime() > Date.now(), until: t.until };
+    const t = JSON.parse(fs.readFileSync(p, 'utf8'));
+    return { active: !!(t && t.until) && new Date(t.until + 'T23:59:59Z').getTime() > Date.now(), until: t && t.until };
   } catch (e) { return { active: false }; }
 }
+// ★s158 2026-09-23 — the free run SPEAKS about the rest of the folder (vsix: auto.js · crx: welcome tab).
+//   The answer for the named files is complete and free; the next step is shown with the user's OWN numbers:
+//   "this folder has N more matching files - M issues in K of them" + the one command that sweeps them.
+//   Never blocks, never starts a trial (s158: no free trial - the free answer on the named files is the "try it"), human seat only, 400 files / 1.5 s cap.
+function folderHint(done) {
+  if (!process.stderr.isTTY || process.env.CI || process.env.READYSTACK_NO_HINT || !done.length) return;
+  const base = path.dirname(path.resolve(done[0]));
+  const seen = new Set(done.map((f) => path.resolve(f)));
+  const all = walk(base, S.exts || [], []).filter((f) => !seen.has(path.resolve(f)));
+  if (!all.length) return;
+  const t0 = Date.now(); let issues = 0, hitFiles = 0, scanned = 0;
+  for (const f of all.slice(0, 400)) { if (Date.now() - t0 > 1500) break; let t = ''; try { t = fs.readFileSync(f, 'utf8'); } catch (e) { continue; } scanned++; const h = scan(t, f); if (h.length) { issues += h.length; hitFiles++; } }
+  const rel = path.relative(process.cwd(), base) || '.';
+  const tail = trialState().active ? 'free during your trial' : '$' + S.price + ' once';
+  const more = all.length + ' more matching file' + (all.length > 1 ? 's' : '');
+  const found = issues ? ' - ' + (scanned < all.length ? 'at least ' : '') + issues + ' issue' + (issues > 1 ? 's' : '') + ' in ' + hitFiles + ' of them' : ' - no issues found in them';
+  process.stderr.write('\n' + (rel === '.' ? 'This folder' : rel) + ' has ' + more + found + '.\n' + (issues ? 'Sweep them all: ' + S.bin + ' --dir ' + (/\s/.test(rel) ? JSON.stringify(rel) : rel) + '   (' + tail + ')\n' : ''));
+}
+let _usePinged = false;
+function pingUse() {
+  try {
+    if (_usePinged) return; _usePinged = true;
+    if (process.env.DO_NOT_TRACK === '1' || process.env.READYSTACK_NO_TELEMETRY || process.env.CI) return;
+    if (!(process.stdout.isTTY || process.stdin.isTTY)) return;   // human seat only (s152)
+    const https = require('https');
+    const body = JSON.stringify({ t: 'use', slug: S.bin, src: 'cli', why: 'free' });
+    const req = https.request({ hostname: 'getreadystack.com', path: '/api/ev', method: 'POST', timeout: 3000,
+      headers: { 'content-type': 'application/json', 'content-length': Buffer.byteLength(body), 'user-agent': 'readystack-cli/' + S.bin } }, function (res) { res.resume(); });
+    req.on('timeout', function () { req.destroy(); }); req.on('error', function () {});
+    req.write(body); req.end();
+  } catch (e) {}
+}
 function mcpServe() {
-  // s144 — MCP server over stdio (newline-delimited JSON-RPC · no dependencies). Free: check_text · check_file. Licence (7-day trial): check_dir.
+  process.env.READYSTACK_MCP = '1';   // s152 - 에이전트(Claude Code·Cursor)가 부른 세션은 사람 자리다 · 키 판 핑 src=mcp
+  // s144 — MCP server over stdio (newline-delimited JSON-RPC · no dependencies). Free: check_text · check_file. Licence (s158: no free trial): check_dir.
   const rl = require('readline').createInterface({ input: process.stdin });
   const send = (o) => process.stdout.write(JSON.stringify(o) + '\n');
   const tools = [
     { name: 'check_text', description: S.name + ' - run all ' + RULE_N + ' checks on a text (free)', inputSchema: { type: 'object', properties: { text: { type: 'string', description: 'file contents' }, path: { type: 'string', description: 'optional file name for context' } }, required: ['text'] } },
     { name: 'check_file', description: S.name + ' - run all checks on one file by path (free)', inputSchema: { type: 'object', properties: { path: { type: 'string' } }, required: ['path'] } },
-    { name: 'check_dir', description: S.name + ' - sweep a folder and return every finding (licence; the full run is free for 7 days)', inputSchema: { type: 'object', properties: { dir: { type: 'string' }, ext: { type: 'string', description: 'optional extension filter, e.g. .html' } }, required: ['dir'] } }
+    { name: 'check_dir', description: S.name + ' - sweep a folder and return every finding (licence; $' + S.price + ' once)', inputSchema: { type: 'object', properties: { dir: { type: 'string' }, ext: { type: 'string', description: 'optional extension filter, e.g. .html' } }, required: ['dir'] } }
   ];
   const result = (id, rows) => send({ jsonrpc: '2.0', id, result: { content: [{ type: 'text', text: render(rows, 'text') }], structuredContent: { tool: S.name, rules: RULE_N, files: rows } } });
   const fail = (id, text) => send({ jsonrpc: '2.0', id, result: { content: [{ type: 'text', text }], isError: true } });
@@ -71,7 +104,7 @@ function mcpServe() {
         if (name === 'check_file') return result(id, [{ file: args.path, hits: scan(fs.readFileSync(args.path, 'utf8'), args.path) }]);
         if (name === 'check_dir') {
           const r = await lic.ensure();
-          if (!r.ok && !trialState().active) return fail(id, S.need_key + ' Get a licence ($' + S.price + ', once, 7-day refund): ' + lic.BUY_URL);
+          if (!r.ok && !trialState().active) return fail(id, S.need_key + ' Get a licence ($' + S.price + ', once): ' + lic.BUY_URL);
           const files = walk(args.dir, args.ext ? [args.ext] : (S.exts || []), []);
           return result(id, files.map((f) => { let t = ''; try { t = fs.readFileSync(f, 'utf8'); } catch (e) { return { file: f, hits: [], error: String(e.message) }; } return { file: f, hits: scan(t, f) }; }));
         }
@@ -89,7 +122,7 @@ function help() {
     '       ' + S.bin + ' --license <key>               store your licence key (or set READYSTACK_LICENSE)',
     '       ' + S.bin + ' --rules                       list the ' + RULE_N + ' rules',
     '       ' + S.bin + ' --mcp                         run as an MCP server (stdio) for Claude Code / Cursor / Windsurf - free checks, folder sweep needs a licence', '',
-    'Free: ' + S.free, 'Licence ($' + S.price + ', once, 7-day refund): ' + S.paid, 'Get a licence: ' + lic.BUY_URL, ''].join('\n');
+    'Free: ' + S.free, 'Licence ($' + S.price + ', once): ' + S.paid, 'Get a licence: ' + lic.BUY_URL, ''].join('\n');
 }
 (async function main() {
   try { const _feed = await lic.pullFeed(); if (_feed && Array.isArray(_feed.rules)) { if (Array.isArray(ENGINE.RULES)) for (const r of _feed.rules) ENGINE.RULES.push(r); } } catch (e) {}   // ★s134 구독 피드 병합 (키 있는 손님만)
@@ -105,9 +138,16 @@ function help() {
   if (paid) {
     const r = await lic.ensure();
     if (!r.ok) {
-      const t = trialState();   // s144 reverse trial: the full run is free for 7 days from the first paid use, then the key
-      if (t.active) process.stderr.write('Trial: the full run is free until ' + t.until + ' — after that $' + S.price + ' once (7-day refund). Get a licence: ' + lic.BUY_URL + '\n');
-      else { process.stderr.write(S.need_key + '\n  set READYSTACK_LICENSE=<key>  or  ' + S.bin + ' --license <key>\n  Get a licence ($' + S.price + ', once): ' + lic.BUY_URL + '\n'); process.exit(2); }
+      const t = trialState();   // s158 — ⚑7일 무료 없음 · 이미 시작된 체험만 지킨다
+      if (t.active) process.stderr.write('Trial: the full run is free until ' + t.until + ' — after that $' + S.price + ' once. Get a licence: ' + lic.BUY_URL + '\n');
+      else {
+        // s158 — the key is asked WITH the customer's own count (endowment · open loop): how many issues this folder holds.
+        let own = '';
+        if (dir) { try { const all = walk(dir, exts, []); let n = 0, k = 0, sc = 0; const t0 = Date.now();
+          for (const f of all.slice(0, 2000)) { if (Date.now() - t0 > 4000) break; let tx = ''; try { tx = fs.readFileSync(f, 'utf8'); } catch (e) { continue; } sc++; const h = scan(tx, f); if (h.length) { n += h.length; k++; } }
+          if (n) own = dir + ': ' + (sc < all.length ? 'at least ' : '') + n + ' issue' + (n > 1 ? 's' : '') + ' in ' + k + ' of ' + all.length + ' files.\n'; } catch (e) {} }
+        process.stderr.write(own + S.need_key + '\n  set READYSTACK_LICENSE=<key>  or  ' + S.bin + ' --license <key>\n  Get a licence ($' + S.price + ' once): ' + lic.BUY_URL + '\n'); process.exit(2);
+      }
     }
   }
   const files = dir ? walk(dir, exts, []) : a.filter((x, i) => !x.startsWith('--') && !['--dir', '--report', '--out', '--ext', '--license'].includes(a[i - 1]));
@@ -115,6 +155,7 @@ function help() {
   const rows = files.map((f) => { let t = ''; try { t = fs.readFileSync(f, 'utf8'); } catch (e) { return { file: f, hits: [], error: String(e.message) }; } return { file: f, hits: scan(t) }; });
   const text = render(rows, fmt || 'text');
   if (out) fs.writeFileSync(out, text); else process.stdout.write(text.endsWith('\n') ? text : text + '\n');
+  if (!paid) { try { folderHint(files); } catch (e) {} pingUse(); }   // s158 — a free run ends with the user's own folder count + one anonymous 'used' count (human seat only)
   const errors = rows.reduce((n, r) => n + r.hits.filter((h) => h.sev === 'error').length, 0);
   if (ci && errors) process.exit(1);
 })().catch((e) => { process.stderr.write(String(e && e.stack || e) + '\n'); process.exit(3); });

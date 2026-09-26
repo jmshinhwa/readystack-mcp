@@ -1,6 +1,6 @@
 {
   "name": "@readystack/cloud-cost-landmine-lint",
-  "version": "0.1.1",
+  "version": "0.1.5",
   "description": "Names every line in the file you have open that starts a recurring cloud charge, with the published us-east-1 price and the date it changes by itself.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

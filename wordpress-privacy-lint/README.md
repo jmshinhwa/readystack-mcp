@@ -33,7 +33,7 @@ Claude Code · Cursor · Windsurf · any MCP client - add to your MCP config:
 { "mcpServers": { "wordpress-privacy-lint": { "command": "npx", "args": ["-y", "@readystack/wordpress-privacy-lint", "--mcp"] } } }
 ```
 
-Tools: `check_text` and `check_file` (free) · `check_dir` (licence; the full sweep is free for 7 days). The agent gets every finding with the line number.
+Tools: `check_text` and `check_file` (free) · `check_dir` (licence). The agent gets every finding with the line number.
 
 ## Use in CI
 
@@ -44,7 +44,7 @@ Tools: `check_text` and `check_file` (free) · `check_dir` (licence; the full sw
 
 (container: `docker run --rm -v "$PWD:/work" getreadystack/wordpress-privacy-lint --dir /work --ci`)
 
-Try the full run free for 7 days — no key needed. Then one licence, 7-day refund, no questions. Set `READYSTACK_LICENSE=<key>` or run `--license <key>` once.
+The folder sweep, reports and CI mode need one licence — one payment, no subscription. Set `READYSTACK_LICENSE=<key>` or run `--license <key>` once.
 
 [Get a licence](https://buy.polar.sh/polar_cl_sZ2Bgyx7lAEhKmhzceABGE3rRlKWXaJxUrjPm48Q1KV)
 

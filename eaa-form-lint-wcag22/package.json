@@ -1,6 +1,6 @@
 {
   "name": "@readystack/eaa-form-lint-wcag22",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Names every WCAG 2.2 AA form failure on its line, with the criterion and the fix",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

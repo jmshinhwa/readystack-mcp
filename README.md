@@ -19,7 +19,7 @@ Every folder in this repository is one npm package `@readystack/<name>`. The sam
 { "mcpServers": { "k8s-removed-api-lint": { "command": "npx", "args": ["-y", "@readystack/k8s-removed-api-lint", "--mcp"] } } }
 ```
 
-The server speaks MCP over stdio (JSON-RPC 2.0, protocol version 2025-06-18: `initialize`, `tools/list`, `tools/call`). Tools exposed by every server: `check_dir` · `check_file` · `check_text`. `check_text` and `check_file` are free with no account; `check_dir` (the workspace sweep with an exportable report and a CI exit code) needs a licence key from https://getreadystack.com — the full sweep is free for the first 7 days. Each finding comes back with the file, the line number and the fix.
+The server speaks MCP over stdio (JSON-RPC 2.0, protocol version 2025-06-18: `initialize`, `tools/list`, `tools/call`). Tools exposed by every server: `check_dir` · `check_file` · `check_text`. `check_text` and `check_file` are free with no account; `check_dir` (the workspace sweep with an exportable report and a CI exit code) needs a licence key from https://getreadystack.com. Each finding comes back with the file, the line number and the fix.
 
 Registry names: `io.github.jmshinhwa/<name>` in the official MCP Registry (registry.modelcontextprotocol.io).
 

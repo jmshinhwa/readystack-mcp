@@ -1,6 +1,6 @@
 {
   "name": "@readystack/sql-card-data-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Names every column, index, view and seed row in a .sql migration that stores card data, with its PCI DSS Requirement 3 rule id",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

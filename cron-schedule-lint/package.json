@@ -1,6 +1,6 @@
 {
   "name": "@readystack/cron-schedule-lint",
-  "version": "0.1.1",
+  "version": "0.1.6",
   "description": "Names every schedule line in the file you have open that fires at the wrong hour, twice, or never at all - and prints the next three times each one really fires, in the zone that actually applies.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

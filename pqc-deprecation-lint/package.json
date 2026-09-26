@@ -1,6 +1,6 @@
 {
   "name": "@readystack/pqc-deprecation-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Dates every quantum-vulnerable algorithm in your code against the NIST IR 8547 clock: deprecated after 2030-12-31, disallowed after 2035-12-31.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

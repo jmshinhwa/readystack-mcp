@@ -1,6 +1,6 @@
 {
   "name": "@readystack/email-footer-law-lint",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Fourteen checks on an HTML email footer: CAN-SPAM postal address and 10-business-day opt-out, CASL's 60-day window, and German 5 DDG, the statute that replaced 5 TMG on 2024-05-14.",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {

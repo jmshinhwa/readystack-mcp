@@ -10,10 +10,14 @@ const RECHECK_MS = 7 * 24 * 3600 * 1000;  // re-ask Polar every 7 days (refunds 
 function storePath() { return path.join(process.env.READYSTACK_HOME || path.join(os.homedir(), '.config', 'readystack'), SLUG + '.json'); }
 function load() { try { return JSON.parse(fs.readFileSync(storePath(), 'utf8')); } catch (e) { return {}; } }
 function save(o) { try { fs.mkdirSync(path.dirname(storePath()), { recursive: true }); fs.writeFileSync(storePath(), JSON.stringify(o)); } catch (e) { /* read-only home: still works for this run */ } }
+const ALL_BENEFIT_ID = '22692551-5203-4467-b1a3-e33cdba6589d';   // s149 2026-09-17 — 팀 키(전 린터 한 키 · Polar benefit) · 상품 benefit 다음에 한 번 더 묻는다
 function validate(key) {
+  return validate1(key, BENEFIT_ID).then(function (r) { return (r.ok || r.offline || !/^[0-9a-f-]{36}$/.test(ALL_BENEFIT_ID)) ? r : validate1(key, ALL_BENEFIT_ID); });
+}
+function validate1(key, ben) {
   return new Promise(function (resolve) {
     if (!ORG_ID) return resolve({ ok: false, offline: false });
-    const body = JSON.stringify(/^[0-9a-f-]{36}$/.test(BENEFIT_ID) ? { key: key, organization_id: ORG_ID, benefit_id: BENEFIT_ID } : { key: key, organization_id: ORG_ID });
+    const body = JSON.stringify(/^[0-9a-f-]{36}$/.test(ben) ? { key: key, organization_id: ORG_ID, benefit_id: ben } : { key: key, organization_id: ORG_ID });
     const req = https.request({ hostname: 'api.polar.sh', path: '/v1/customer-portal/license-keys/validate', method: 'POST', timeout: 8000,
       headers: { 'content-type': 'application/json', 'polar-version': '2026-04', 'content-length': Buffer.byteLength(body) } }, function (res) {
       let buf = ''; res.on('data', function (d) { buf += d; });
@@ -28,15 +32,30 @@ function validate(key) {
     req.write(body); req.end();
   });
 }
+// ★s151 2026-09-19 — 키 판(키가 없거나 거절된 순간)을 익명으로 센다 (슬러그·출처·이유만) · DO_NOT_TRACK=1 · READYSTACK_NO_TELEMETRY 면 안 보낸다 · 실패는 조용히 · 프로세스당 한 번.
+let _pinged = false;
+function pingPaywall(why) {
+  try {
+    if (_pinged) return; _pinged = true;
+    if (process.env.DO_NOT_TRACK === '1' || process.env.READYSTACK_NO_TELEMETRY || process.env.CI) return;   // s151: CI(깃허브 액션 등)와 우리 빌드는 손님이 아니다
+    if (!(process.stdout.isTTY || process.stdin.isTTY || process.env.READYSTACK_MCP === '1')) return;   // s152: 사람 자리(터미널·MCP 세션)에서만 센다 - 발행 1분 뒤 남의 실행기(JP · 우리 3대는 US)가 돌린 no_key 13건은 손님이 아니다
+    const body = JSON.stringify({ t: 'paywall', slug: SLUG, src: process.env.READYSTACK_MCP === '1' ? 'mcp' : 'cli', why: why || 'no_key' });
+    const req = https.request({ hostname: 'getreadystack.com', path: '/api/ev', method: 'POST', timeout: 3000,
+      headers: { 'content-type': 'application/json', 'content-length': Buffer.byteLength(body), 'user-agent': 'readystack-cli/' + SLUG } }, function (res) { res.resume(); });
+    req.on('timeout', function () { req.destroy(); }); req.on('error', function () {});
+    req.write(body); req.end();
+  } catch (e) { /* 세는 것이 실패해도 상품은 돈다 */ }
+}
 async function ensure(explicitKey) {
   const st = load();
   const key = explicitKey || process.env.READYSTACK_LICENSE || st.key;
-  if (!key) return { ok: false, why: 'no_key' };
+  if (!key) { pingPaywall('no_key'); return { ok: false, why: 'no_key' }; }   // s151
   const age = Date.now() - (st.okAt || 0);
   if (!explicitKey && st.key === key && age < RECHECK_MS) return { ok: true, cached: true };
   const r = await validate(String(key).trim());
   if (r.ok) { save({ key: String(key).trim(), okAt: Date.now() }); return { ok: true }; }
   if (r.offline && st.key === key && age < GRACE_MS) return { ok: true, offline: true };
+  if (!r.offline) pingPaywall('invalid');   // s151
   return { ok: false, why: r.offline ? 'offline' : 'invalid' };
 }
 // ★s134 — 구독 규칙 피드(층3 "바뀌면 업데이트"): 키 있는 손님만 · 7일마다 · 오프라인은 캐시. 워커 GET /api/rules/<slug>?key=

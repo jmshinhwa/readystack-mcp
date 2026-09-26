@@ -1,6 +1,6 @@
 {
   "name": "@readystack/autorenew-signup-lint",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "Sixteen statutory checks on the signup page AB 2863 rewrote, in your editor and in the browser",
   "license": "SEE LICENSE IN LICENSE.txt",
   "publishConfig": {
